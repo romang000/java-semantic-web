@@ -1,23 +1,25 @@
 package models
 
 type AstNode struct {
-	NodeType string         `json:"node_type"`
-	Position map[string]int `json:"position"`
-	Children []*AstNode     `json:"children,omitempty"`
-	
-	Name        *string  `json:"name,omitempty"`
-	Value       *string  `json:"value,omitempty"`
-	LiteralType *string  `json:"literal_type,omitempty"`
-	Operator    *string  `json:"operator,omitempty"`
-	Modifiers   []string `json:"modifiers,omitempty"`
-	IsArray     *bool    `json:"is_array,omitempty"`
-	
-	ReturnType *AstNode   `json:"return_type,omitempty"`
-	FieldType  *AstNode   `json:"field_type,omitempty"`
-	Parameters []AstNode  `json:"parameters,omitempty"`
-	Arguments  []AstNode  `json:"arguments,omitempty"`
-	Statements []*AstNode `json:"statements,omitempty"`
-	
-	Classes []*AstNode `json:"classes,omitempty"`
-	Imports []string   `json:"imports,omitempty"`
+	NodeType     string         `json:"node_type"`
+	Position     map[string]int `json:"position,omitempty"`
+	Name         *string        `json:"name"`
+	Value        interface{}    `json:"value"`
+	LiteralType  *string        `json:"literal_type"`
+	Operator     *string        `json:"operator"`
+	Modifiers    []string       `json:"modifiers"`
+	IsArray      *bool          `json:"is_array"`
+	ReturnType   *AstNode       `json:"return_type"`
+	FieldType    *AstNode       `json:"field_type"`
+	ParamType    *AstNode       `json:"param_type"`
+	Parameters   []AstNode      `json:"parameters"`
+	Arguments    []AstNode      `json:"arguments"`
+	Statements   []AstNode      `json:"statements"`
+	Children     []AstNode      `json:"children"`
+	Classes      []AstNode      `json:"classes"`
+	Imports      []AstNode      `json:"imports"`
+	Fields       []AstNode      `json:"fields"`
+	Methods      []AstNode      `json:"methods"`
+	GenericTypes []AstNode      `json:"generic_types"`
+	Body         *AstNode       `json:"body"`
 }
